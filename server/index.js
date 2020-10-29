@@ -40,8 +40,26 @@ const tickets = [
   { id: '6', title: 'Fill out the space some more', completed: false },
 ];
 
+app.param('ticketId', (req, res, next, ticketId) => {
+  const ticket = tickets.find(ticket => ticket.id === ticketId);
+  
+  if (ticket) {
+    req.ticket = ticket;
+    next();
+  } else {
+    const error = new Error('no such ticket');
+    error.status = 404;
+    next(error);
+  }
+});
+
 app.get('/api/tickets', function(req, res) {
   res.send(tickets);
+});
+
+app.put('/api/tickets/:ticketId/toggle', function(req, res) {
+  req.ticket.completed = !req.ticket.completed;
+  res.send(202);
 });
 
 app.listen(port, () =>

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import './UserView.css';
 
 function UserView({ className }) {
-  const query = useQuery('user', fetchUser);
+  const query = useQuery('user', fetchUser, { refetchOnWindowFocus: false, refetchOnReconnect: false });
 
   const { data: user, isLoading } = query;
 
