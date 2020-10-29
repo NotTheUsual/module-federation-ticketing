@@ -1,20 +1,19 @@
 import { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import Providers from './Providers';
+import Header from './header/Header';
 import TicketsView from './tickets/TicketsView';
-import UserView from 'user/UserView';
+import('user/_shared/theme.css');
 import './App.css';
 
 function App() {
   return (
     <Providers>
       <section>
-        <h1>Tickets</h1>
-        <p>This is the tickets page</p>
-        <TicketsView />
-        <Suspense fallback={<p>Loading user...</p>}>
-          <UserView />
-        </Suspense>
+        <Header />
+        <main className="content">
+          <TicketsView />
+        </main>
       </section>
     </Providers>
   );

@@ -32,7 +32,12 @@ app.get('/api/user/profile-image', function(req, res) {
 });
 
 const tickets = [
-  { id: 1, title: 'Do something' }
+  { id: '1', title: 'Do something', completed: false },
+  { id: '2', title: 'Learn about module federation', completed: false },
+  { id: '3', title: 'Write a demo app', completed: false },
+  { id: '4', title: 'Pretend youre not doing ticketing', completed: true },
+  { id: '5', title: 'Write some fake tickets', completed: true },
+  { id: '6', title: 'Fill out the space some more', completed: false },
 ];
 
 app.get('/api/tickets', function(req, res) {

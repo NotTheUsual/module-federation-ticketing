@@ -52,6 +52,7 @@ module.exports = {
       remotes: {},
       exposes: {
         "./UserView": "./src/user/UserView",
+        "./_shared/theme.css": "./src/_shared/theme.css"
       },
       shared: {
         ...deps,

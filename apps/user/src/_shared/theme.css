@@ -26,10 +26,14 @@ h6 {
 
 h1 {
   font-size: 4rem;
-  margin: 0 0 1rem;
+  margin: 0;
 }
 
 .header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 2rem;
   padding: 0.5rem;
 }
 
