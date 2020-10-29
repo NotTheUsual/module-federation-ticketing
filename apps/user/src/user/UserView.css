@@ -1,0 +1,11 @@
+.user-title {
+  color: rgb(64, 65, 64);
+}
+
+
+.user__wrapper {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 1rem;
+  padding: 1rem;
+}

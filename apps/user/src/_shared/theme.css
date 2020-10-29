@@ -1,0 +1,39 @@
+
+:root {
+  --background: #fafafa;
+  --text: #222;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 4rem;
+  margin: 0 0 1rem;
+}
+
+.header {
+  padding: 0.5rem;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}
