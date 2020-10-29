@@ -1,6 +1,15 @@
-const express = require("express");
+const express = require('express');
 const app = express();
 const port = 7001;
+
+const request = require('request');
+const crypto = require('crypto');
+
+const md5Hash = (string) => {
+  const md5Sum = crypto.createHash('md5');
+  md5Sum.update(string);
+  return md5Sum.digest('hex');
+}
 
 app.use(require("body-parser").json());
 app.use(require("cors")());
@@ -8,11 +17,18 @@ app.use(require("cors")());
 const user = {
   id: '1234abc',
   name: 'James Hunter',
-  email: 'james.hunter@me.com'
+  email: 'james.hunter@starlingbank.com'
 };
 
 app.get('/api/user', function(req, res) {
   res.send(user);
+});
+
+app.get('/api/user/profile-image', function(req, res) {
+  const emailHash = md5Hash(user.email);
+  const imageUrl = `https://www.gravatar.com/avatar/${emailHash}.jpg`;
+  console.log(`Proxying request to ${imageUrl}`);
+  request.get(imageUrl).pipe(res);
 });
 
 const tickets = [

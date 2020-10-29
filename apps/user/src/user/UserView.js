@@ -1,8 +1,9 @@
 import { useQuery } from 'react-query';
 import { fetchUser } from './userService';
+import classNames from 'classnames';
 import './UserView.css';
 
-function UserView() {
+function UserView({ className }) {
   const query = useQuery('user', fetchUser);
 
   const { data: user, isLoading } = query;
@@ -10,9 +11,10 @@ function UserView() {
   if (isLoading) return <p>Loading...</p>
 
   return (
-    <section className="user__wrapper">
-      <h4 className="user-title">{user.name}</h4>
-      <p>{user.email}</p>
+    <section className={classNames('user__wrapper', className)}>
+      <img src="http://localhost:7001/api/user/profile-image" alt="" />
+      <h4 className="user__title">{user.name}</h4>
+      <p className="user__email">{user.email}</p>
     </section>
   );
 }

@@ -7,5 +7,34 @@
   background: #fff;
   border: 1px solid #eee;
   border-radius: 1rem;
+  display: grid;
+  grid-column-gap: 0.75rem;
+  grid-row-gap: 0.5rem;
+  grid-template-areas:
+    'image title'
+    'image email';
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
   padding: 1rem;
+}
+
+.user__wrapper img {
+  --radius: 50px;
+  border-radius: 50%;
+  grid-area: image;
+  height: var(--radius);
+  width: var(--radius);
+}
+
+.user__title {
+  align-self: end;
+  grid-area: title;
+  margin: 0;
+}
+
+.user__email {
+  align-self: start;
+  font-size: 0.9em;
+  grid-area: email;
+  margin: 0;
 }
