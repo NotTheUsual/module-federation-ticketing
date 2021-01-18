@@ -1,0 +1,19 @@
+.docs-list {
+  font-size: 2rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.doc {
+  padding: 1rem;
+}
+
+.doc + .doc {
+  border-top: 1px solid var(--border-colour, #ccc);
+}
+
+.doc__number {
+  margin-right: 0.5rem;
+  opacity: 0.5;
+}

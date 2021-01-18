@@ -62,33 +62,17 @@ app.put('/api/tickets/:ticketId/toggle', function(req, res) {
   res.send(202);
 });
 
+const docs = [
+  { id: '1', title: 'What’s going on with Module Federation?' },
+  { id: '2', title: 'Why JavaScript is so great' },
+  { id: '3', title: 'I really don’t know what to put here' },
+  { id: '4', title: 'Being good at coming up with fake titles' }
+];
+
+app.get('/api/docs', function(req, res) {
+  res.send(docs);
+});
+
 app.listen(port, () =>
   console.log(`Ticeting service listening at http://localhost:${port}`)
 );
-
-// app.post("/api/checkout", function (req, res) {
-//   cart.items = [];
-//   res.send(cart);
-// });
-
-// app.post("/api/add", function (req, res) {
-//   const pokemon = req.body.pokemon;
-//   let found = false;
-//   cart.items.forEach((item) => {
-//     if (item.pokemon.name.english === pokemon.name.english) {
-//       item.count += 1;
-//       found = true;
-//     }
-//   });
-//   if (!found) {
-//     cart.items.push({
-//       pokemon,
-//       count: 1,
-//     });
-//   }
-//   res.send(cart);
-// });
-
-// app.get("/api/cart", function (req, res) {
-//   res.send(cart);
-// });
