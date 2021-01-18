@@ -8,7 +8,7 @@ function Header() {
     <header className="header">
       <h1>Tickets</h1>
       <Suspense fallback={<p>Loading user...</p>}>
-        <UserView className="compact-user-view" />
+        <UserView condensed />
       </Suspense>
     </header>
   );

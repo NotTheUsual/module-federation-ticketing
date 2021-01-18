@@ -1,11 +1,5 @@
-.user-title {
-  color: rgb(64, 65, 64);
-}
-
-
 .user__wrapper {
-  background: #fff;
-  border: 1px solid #eee;
+  border: 1px solid var(--border-colour);
   border-radius: 1rem;
   display: grid;
   grid-column-gap: 0.75rem;
@@ -19,11 +13,11 @@
 }
 
 .user__wrapper img {
-  --radius: 50px;
+  --diameter: 50px;
   border-radius: 50%;
   grid-area: image;
-  height: var(--radius);
-  width: var(--radius);
+  height: var(--diameter);
+  width: var(--diameter);
 }
 
 .user__title {
@@ -37,4 +31,16 @@
   font-size: 0.9em;
   grid-area: email;
   margin: 0;
+}
+
+.user__wrapper--condensed {
+  background: none;
+  border-color: var(--border-colour);
+  border-radius: 0.5rem;
+  grid-row-gap: 0.25rem;
+  padding: 0.75rem;
+}
+
+.user__wrapper--condensed img {
+  --diameter: 40px;
 }
