@@ -1,0 +1,41 @@
+.host-nav {
+  align-items: flex-end;
+  display: flex;
+  height: 4rem;
+}
+
+.host-nav__link {
+  color: #6935d3;
+  font-size: 3.5rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.host-nav__link:hover:not(.active) {
+  opacity: 0.75;
+}
+
+.host-nav__link:active {
+  color: #6935d3;
+  opacity: 0.5;
+}
+
+.host-nav__link + .host-nav__link {
+  margin-left: 1rem;
+}
+
+.host-nav__link.active {
+  color: var(--text);
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.host-nav__profile-link {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.host-nav__profile-link:hover:not(.active) {
+  background-color: #eee;
+  border-radius: 0.5rem;
+}
